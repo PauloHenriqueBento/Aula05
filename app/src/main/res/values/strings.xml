@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Aula05</string>
+    <string name="ir">Go</string>
+    <string name="nome">Name</string>
+    <string name="telefone">Phone</string>
+    <string name="email">Email</string>
+    <string name="tel">Phone</string>
+    <string name="contato_tel">Contact by phone</string>
+    <string name="contato_email">Contact by Email</string>
+    <string name="sim">Yes</string>
+    <string name="nao">No</string>
+    <string name="Confirmacao">Confirmation</string>
+</resources>
