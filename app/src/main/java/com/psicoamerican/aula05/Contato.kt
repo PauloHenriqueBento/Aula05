@@ -21,16 +21,18 @@ class Contato : AppCompatActivity() {
             |${getString(R.string.contato_tel)}: ${if (binding.checkBoxTel.isChecked) getString(R.string.sim) else getString(R.string.nao) }
             |${getString(R.string.contato_email)}: ${if (binding.checkBoxEmail.isChecked) getString(R.string.sim) else getString(R.string.nao)}""".trimMargin()
 
-            alert(getString(R.string.Confirmacao), msg)
+            alert(getString(R.string.Confirmacao), msg, this)
         }
-    }
+        
+        binding.editTelefone.isEnabled = binding.checkBoxTel.isChecked
+        binding.editEmail.isEnabled = binding.checkBoxEmail.isChecked
 
-    fun alert(titulo: String, msg: String){
-        AlertDialog.Builder(this)
-            .setTitle(titulo)
-            .setMessage(msg)
-            .setPositiveButton("Ok", null)
-            .create()
-            .show()
+        binding.checkBoxTel.setOnCheckedChangeListener { checkbox, marcado ->
+            binding.editTelefone.isEnabled = marcado
+        }
+
+        binding.checkBoxEmail.setOnCheckedChangeListener { checkbox, marcado ->
+            binding.editEmail.isEnabled = marcado
+        }
     }
 }
